@@ -1,0 +1,70 @@
+
+
+[
+{
+  "name": "Smartphone XYZ",
+  "price": 599.99,
+  "description": "A high-end smartphone with an advanced camera system, large display, and long battery life.",
+  "ratings": 4.5,
+  "images": [
+    {
+      "public_id": "smartphone_xyz_1",
+      "url": "http://example.com/images/smartphone_xyz_1.jpg"
+    },
+    {
+      "public_id": "smartphone_xyz_2",
+      "url": "http://example.com/images/smartphone_xyz_2.jpg"
+    }
+  ],
+  "category": "Electronics",
+  "stock": 50,
+  "seller": "TechStore",
+  "numOfReviews": 10,
+  "reviews": [
+    {
+      "name": "John Doe",
+      "rating": 5,
+      "comment": "Excellent smartphone with great features!"
+    },
+    {
+      "name": "Jane Smith",
+      "rating": 4,
+      "comment": "Good value for the price."
+    }
+  ],
+  "createdAt": "2023-06-12T08:30:00Z"
+},
+{
+  "name": "Laptop ABC",
+  "price": 1299.99,
+  "description": "A powerful laptop with high-performance specifications, sleek design, and a long-lasting battery.",
+  "ratings": 4.8,
+  "images": [
+    {
+      "public_id": "laptop_abc_1",
+      "url": "http://example.com/images/laptop_abc_1.jpg"
+    },
+    {
+      "public_id": "laptop_abc_2",
+      "url": "http://example.com/images/laptop_abc_2.jpg"
+    }
+  ],
+  "category": "Electronics",
+  "stock": 30,
+  "seller": "TechStore",
+  "numOfReviews": 8,
+  "reviews": [
+    {
+      "name": "Michael Johnson",
+      "rating": 5,
+      "comment": "Amazing laptop! Super fast and reliable."
+    },
+    {
+      "name": "Emily Williams",
+      "rating": 4.5,
+      "comment": "Great value for the performance it offers."
+    }
+  ],
+  "createdAt": "2024-06-12T10:15:00Z"
+}
+]

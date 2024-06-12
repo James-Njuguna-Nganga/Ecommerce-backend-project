@@ -1,10 +1,11 @@
+require('dotenv').config({ path: './config/config.env' })
 const app = require('./app')
 const connectDatabase = require('./config/database')
 
 const dotenv = require('dotenv')
 
 // Setting up config file
-dotenv.config({ path:'./config/config.env' })
+dotenv.config({ path: './config/config.env' })
 
 //connecting to database
 connectDatabase();
