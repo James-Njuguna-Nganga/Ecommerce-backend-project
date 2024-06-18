@@ -1,70 +1,167 @@
-
-
 [
-{
-  "name": "Smartphone XYZ",
-  "price": 599.99,
-  "description": "A high-end smartphone with an advanced camera system, large display, and long battery life.",
-  "ratings": 4.5,
-  "images": [
-    {
-      "public_id": "smartphone_xyz_1",
-      "url": "http://example.com/images/smartphone_xyz_1.jpg"
-    },
-    {
-      "public_id": "smartphone_xyz_2",
-      "url": "http://example.com/images/smartphone_xyz_2.jpg"
-    }
-  ],
-  "category": "Electronics",
-  "stock": 50,
-  "seller": "TechStore",
-  "numOfReviews": 10,
-  "reviews": [
-    {
-      "name": "John Doe",
-      "rating": 5,
-      "comment": "Excellent smartphone with great features!"
-    },
-    {
-      "name": "Jane Smith",
-      "rating": 4,
-      "comment": "Good value for the price."
-    }
-  ],
-  "createdAt": "2023-06-12T08:30:00Z"
-},
-{
-  "name": "Laptop ABC",
-  "price": 1299.99,
-  "description": "A powerful laptop with high-performance specifications, sleek design, and a long-lasting battery.",
-  "ratings": 4.8,
-  "images": [
-    {
-      "public_id": "laptop_abc_1",
-      "url": "http://example.com/images/laptop_abc_1.jpg"
-    },
-    {
-      "public_id": "laptop_abc_2",
-      "url": "http://example.com/images/laptop_abc_2.jpg"
-    }
-  ],
-  "category": "Electronics",
-  "stock": 30,
-  "seller": "TechStore",
-  "numOfReviews": 8,
-  "reviews": [
-    {
-      "name": "Michael Johnson",
-      "rating": 5,
-      "comment": "Amazing laptop! Super fast and reliable."
-    },
-    {
-      "name": "Emily Williams",
-      "rating": 4.5,
-      "comment": "Great value for the performance it offers."
-    }
-  ],
-  "createdAt": "2024-06-12T10:15:00Z"
-}
+  {
+    "name": "Smartphone XYZ",
+    "price": 599.99,
+    "description": "A high-end smartphone with an advanced camera system, large display, and long battery life.",
+    "ratings": 4.5,
+    "images": [
+      {
+        "public_id": "smartphone_xyz_1",
+        "url": "http://example.com/images/smartphone_xyz_1.jpg"
+      },
+      {
+        "public_id": "smartphone_xyz_2",
+        "url": "http://example.com/images/smartphone_xyz_2.jpg"
+      }
+    ],
+    "category": "Electronics",
+    "stock": 50,
+    "seller": "TechStore",
+    "numOfReviews": 10,
+    "reviews": [
+      {
+        "name": "John Doe",
+        "rating": 5,
+        "comment": "Excellent smartphone with great features!"
+      },
+      {
+        "name": "Jane Smith",
+        "rating": 4,
+        "comment": "Good value for the price."
+      }
+    ],
+    "createdAt": "2023-06-12T08:30:00Z"
+  },
+  {
+    "name": "Laptop ABC",
+    "price": 1299.99,
+    "description": "A powerful laptop with high-performance specifications, sleek design, and a long-lasting battery.",
+    "ratings": 4.8,
+    "images": [
+      {
+        "public_id": "laptop_abc_1",
+        "url": "http://example.com/images/laptop_abc_1.jpg"
+      },
+      {
+        "public_id": "laptop_abc_2",
+        "url": "http://example.com/images/laptop_abc_2.jpg"
+      }
+    ],
+    "category": "Electronics",
+    "stock": 30,
+    "seller": "TechStore",
+    "numOfReviews": 8,
+    "reviews": [
+      {
+        "name": "Michael Johnson",
+        "rating": 5,
+        "comment": "Amazing laptop! Super fast and reliable."
+      },
+      {
+        "name": "Emily Williams",
+        "rating": 4.5,
+        "comment": "Great value for the performance it offers."
+      }
+    ],
+    "createdAt": "2024-06-12T10:15:00Z"
+  },
+  {
+    "name": "Tablet MNO",
+    "price": 749.99,
+    "description": "A versatile tablet with a stunning display, powerful processor, and extensive app support.",
+    "ratings": 4.6,
+    "images": [
+      {
+        "public_id": "tablet_mno_1",
+        "url": "http://example.com/images/tablet_mno_1.jpg"
+      },
+      {
+        "public_id": "tablet_mno_2",
+        "url": "http://example.com/images/tablet_mno_2.jpg"
+      }
+    ],
+    "category": "Electronics",
+    "stock": 40,
+    "seller": "GadgetWorld",
+    "numOfReviews": 12,
+    "reviews": [
+      {
+        "name": "Alice Brown",
+        "rating": 5,
+        "comment": "The best tablet I have ever used!"
+      },
+      {
+        "name": "David Wilson",
+        "rating": 4,
+        "comment": "Great performance but a bit pricey."
+      }
+    ],
+    "createdAt": "2024-05-20T12:00:00Z"
+  },
+  {
+    "name": "Smartwatch DEF",
+    "price": 299.99,
+    "description": "A stylish smartwatch with fitness tracking, customizable watch faces, and long battery life.",
+    "ratings": 4.3,
+    "images": [
+      {
+        "public_id": "smartwatch_def_1",
+        "url": "http://example.com/images/smartwatch_def_1.jpg"
+      },
+      {
+        "public_id": "smartwatch_def_2",
+        "url": "http://example.com/images/smartwatch_def_2.jpg"
+      }
+    ],
+    "category": "Accessories",
+    "stock": 75,
+    "seller": "GadgetWorld",
+    "numOfReviews": 15,
+    "reviews": [
+      {
+        "name": "Chris Evans",
+        "rating": 4.5,
+        "comment": "Very useful and looks great on the wrist."
+      },
+      {
+        "name": "Patricia Lee",
+        "rating": 4,
+        "comment": "Good features but could use a better battery."
+      }
+    ],
+    "createdAt": "2024-06-05T09:45:00Z"
+  },
+  {
+    "name": "Wireless Earbuds GHI",
+    "price": 199.99,
+    "description": "High-quality wireless earbuds with noise cancellation, excellent sound, and comfortable fit.",
+    "ratings": 4.7,
+    "images": [
+      {
+        "public_id": "wireless_earbuds_ghi_1",
+        "url": "http://example.com/images/wireless_earbuds_ghi_1.jpg"
+      },
+      {
+        "public_id": "wireless_earbuds_ghi_2",
+        "url": "http://example.com/images/wireless_earbuds_ghi_2.jpg"
+      }
+    ],
+    "category": "Accessories",
+    "stock": 100,
+    "seller": "SoundHub",
+    "numOfReviews": 20,
+    "reviews": [
+      {
+        "name": "Oliver Taylor",
+        "rating": 5,
+        "comment": "Fantastic sound quality and very comfortable!"
+      },
+      {
+        "name": "Sophia Martinez",
+        "rating": 4.5,
+        "comment": "Great earbuds but a bit expensive."
+      }
+    ],
+    "createdAt": "2024-06-10T11:30:00Z"
+  }
 ]

@@ -1,16 +1,9 @@
 const Product = require('../models/product');
-
-const dotenv = require('dotenv');
-
-const connectDatabase = require('../config/database');
-
 const products = require('../data/product');
+const connectDB= require ("../config/database");
 
-//setting dotenv file
 
-dotenv.config({ path:'config/config.env'})
-
-connectDatabase();
+connectDB()
 
 const seedProducts = async () => {
   try {
@@ -20,7 +13,7 @@ const seedProducts = async () => {
     await Product.insertMany(products);
     console.log('All products are added');
 
-    process.exit();
+    process.exit( );
 
   }  catch(error){
     console.log(error.message);
