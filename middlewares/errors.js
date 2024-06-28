@@ -22,12 +22,32 @@ module.exports = (err, req, res, next) => {
       const message = `Resource not found. Invalid : ${err.path}`
       error = new ErrorHandler(message, 400)
     }
-   //handling mongoose validation error
+    //handling mongoose validation error
 
-  if (err.name === 'ValidationError'){
-    const message = Object.values(err.errors).map(value => value.message)
-    error = new ErrorHandler(message, 400)
-  }
+    if (err.name === 'ValidationError') {
+      const message = Object.values(err.errors).map(value => value.message)
+      error = new ErrorHandler(message, 400)
+    }
+
+    //handling mongoose duplicate key errors
+    if (err.code === 11000) {
+      const message = `Duplicate ${Object.keys(err.keyValue)} entered`
+      error = new ErrorHandler(message, 400)
+    }
+
+    //handling wrong JWT error
+    if (err.name === 'TokenExpiredError') {
+      const message = 'JSON web Token is expired. Try Again!!!'
+      error = new ErrorHandler(message, 400)
+    }
+
+    //handling expired JWT error
+    if (err.name === 'JsonWebTokenError') {
+      const message = 'JSON web Token is ivalid. Try Again!!!'
+      error = new ErrorHandler(message, 400)
+    }
+
+
     res.status(error.statusCode).json({
       success: false,
       message: error.message || 'Internal Server Error'

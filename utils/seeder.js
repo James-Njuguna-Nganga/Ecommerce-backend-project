@@ -1,6 +1,6 @@
 const Product = require('../models/product');
 const products = require('../data/product');
-const connectDB= require ("../config/database");
+const connectDB = require("../config/database");
 
 
 connectDB()
@@ -13,9 +13,9 @@ const seedProducts = async () => {
     await Product.insertMany(products);
     console.log('All products are added');
 
-    process.exit( );
+    process.exit();
 
-  }  catch(error){
+  } catch (error) {
     console.log(error.message);
     process.exit();
   }
