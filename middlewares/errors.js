@@ -37,7 +37,7 @@ module.exports = (err, req, res, next) => {
 
     //handling wrong JWT error
     if (err.name === 'TokenExpiredError') {
-      const message = 'JSON web Token is expired. Try Again!!!'
+      const message = 'JSON web Token is already expired. Try Again!!!'
       error = new ErrorHandler(message, 400)
     }
 
