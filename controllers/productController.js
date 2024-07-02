@@ -86,3 +86,61 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     message: 'Product removed successfully'
   });
 })
+
+// Create new review => /api/v1/review
+exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
+  const { rating, comment, productId } = req.body;
+
+  // Find product by ID
+  const product = await Product.findById(productId);
+
+  // If product is not found, return an error
+  if (!product) {
+    return next(new ErrorHandler('Product not found', 404));
+  }
+
+  // Ensure product.reviews is an array
+  if (!Array.isArray(product.reviews)) {
+    product.reviews = [];
+  }
+
+  // Ensure req.user is defined
+  if (!req.user) {
+    return next(new ErrorHandler('User not authenticated', 401));
+  }
+
+  // Create the review object
+  const review = {
+    user: req.user._id,
+    name: req.user.name,
+    rating: Number(rating),
+    comment
+  };
+
+  // Check if the user has already reviewed the product
+  const isReviewed = product.reviews.find(
+    r => r.user && r.user.toString() === req.user._id.toString()
+  );
+
+  if (isReviewed) {
+    product.reviews.forEach(review => {
+      if (review.user && review.user.toString() === req.user._id.toString()) {
+        review.comment = comment;
+        review.rating = rating;
+      }
+    });
+  }  else {
+    product.reviews.push(review);
+    product.numOfReviews = product.reviews.length;
+  }
+
+  // Calculate the average rating
+  product.ratings = product.reviews.reduce((acc, item) => item.rating + acc, 0) / product.reviews.length;
+
+  // Save the updated product without validation
+  await product.save({ validateBeforeSave: false });
+
+  res.status(200).json({
+    success: true
+  });
+});
