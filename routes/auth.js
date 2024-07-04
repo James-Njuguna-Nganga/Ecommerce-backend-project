@@ -16,24 +16,21 @@ const {
   deleteUser,
 } = require('../controllers/authController');
 
-const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth')
+const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
 
+router.post('/register', registerUser);
+router.post('/login', loginUser);
+router.post('/password/forgot', forgotPassword);
+router.put('/password/reset/:token', resetPassword);
+router.get('/logout', logout);
 
+router.get('/me', isAuthenticatedUser, getUserProfile);
+router.put('/password/update', isAuthenticatedUser, updatePassword);
+router.put('/me/update', isAuthenticatedUser, updateProfile);
 
-router.route('/register').post(registerUser);
-router.route('/login').post(loginUser);
-router.route('/password/forgot').post(forgotPassword);
-router.route('/password/reset/:token').put(resetPassword);
-router.route('/logout').get(logout);
-router.route('/me').get(isAuthenticatedUser, getUserProfile);
-router.route("/password/update").put(isAuthenticatedUser, updatePassword);
-router.route("/me/update").put(isAuthenticatedUser, updateProfile);
-router.route("/admin/users").get(isAuthenticatedUser, authorizeRoles('admin'), allUsers);
-router.route("/admin/user/:id")
-.get(isAuthenticatedUser, authorizeRoles('admin'), getUserDetails)
-.put(isAuthenticatedUser, authorizeRoles('admin'), updateUser)
-.delete(isAuthenticatedUser, authorizeRoles('admin'), deleteUser)
-
-
+router.get('/admin/users', isAuthenticatedUser, authorizeRoles('admin'), allUsers);
+router.get('/admin/user/:id', isAuthenticatedUser, authorizeRoles('admin'), getUserDetails);
+router.put('/admin/user/:id', isAuthenticatedUser, authorizeRoles('admin'), updateUser);
+router.delete('/admin/user/:id', isAuthenticatedUser, authorizeRoles('admin'), deleteUser);
 
 module.exports = router;
