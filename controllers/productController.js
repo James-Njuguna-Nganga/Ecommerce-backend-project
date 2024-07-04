@@ -134,13 +134,40 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     product.numOfReviews = product.reviews.length;
   }
 
-  // Calculate the average rating
   product.ratings = product.reviews.reduce((acc, item) => item.rating + acc, 0) / product.reviews.length;
 
-  // Save the updated product without validation
   await product.save({ validateBeforeSave: false });
 
   res.status(200).json({
     success: true
   });
 });
+
+//get product reviews => /api/v1/reviews
+
+exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
+
+  const product = await Product.findById(req.query.id);
+
+
+
+  res.status(200).json({
+    success: true,
+    reviews: product.reviews
+  });
+})
+
+//delete product review => /api/v1/reviews
+
+exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
+
+  const product = await Product.findById(req.query.id);
+
+
+
+  res.status(200).json({
+    success: true,
+    reviews: product.reviews
+  });
+})
+
