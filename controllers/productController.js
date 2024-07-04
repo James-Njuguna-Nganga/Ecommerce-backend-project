@@ -91,23 +91,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
   const { rating, comment, productId } = req.body;
 
-  // Find product by ID
   const product = await Product.findById(productId);
-
-  // If product is not found, return an error
-  if (!product) {
-    return next(new ErrorHandler('Product not found', 404));
-  }
-
-  // Ensure product.reviews is an array
-  if (!Array.isArray(product.reviews)) {
-    product.reviews = [];
-  }
-
-  // Ensure req.user is defined
-  if (!req.user) {
-    return next(new ErrorHandler('User not authenticated', 401));
-  }
 
   // Create the review object
   const review = {
